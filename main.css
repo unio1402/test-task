@@ -1,0 +1,23 @@
+
+section {
+    margin-bottom: 130px;
+    text-align: center;
+}
+
+section h2 {
+    text-align: left;
+}
+
+
+
+
+
+
+
+#textarea {
+    width: 500px;
+    height: 100px;
+}
+#getCoincidence{
+    display: block;
+}

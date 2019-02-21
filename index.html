@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Test task from Semolina</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" type="text/css" media="screen" href="/clock/clock.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="/calculator/calculator.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css">
+
+    <script sync type="text/javascript" src="/clock/clock.js"></script>
+    <script sync type="text/javascript" src="/calculator/calculator.js"></script>
+</head>
+
+
+<body>
+
+    <section>
+        <h2>Часы</h2>
+        <div class="clock">
+            <div class="clock-position clock-position--5">
+                <span class="clock-scratch"></span>
+            </div>
+            <div class="clock-position clock-position--10">
+                <span class="clock-scratch"></span>
+            </div>
+            <div class="clock-position clock-position--15">
+                <span class="clock-scratch"></span>
+            </div>
+            <div class="clock-position clock-position--20">
+                <span class="clock-scratch"></span>
+            </div>
+            <div class="clock-position clock-position--25">
+                <span class="clock-scratch"></span>
+            </div>
+            <div class="clock-position clock-position--30">
+                <span class="clock-scratch"></span>
+            </div>
+            <div class="clock-position clock-position--35">
+                <span class="clock-scratch"></span>
+            </div>
+            <div class="clock-position clock-position--40">
+                <span class="clock-scratch"></span>
+            </div>
+            <div class="clock-position clock-position--45">
+                <span class="clock-scratch"></span>
+            </div>
+            <div class="clock-position clock-position--50">
+                <span class="clock-scratch"></span>
+            </div>
+            <div class="clock-position clock-position--55">
+                <span class="clock-scratch"></span>
+            </div>
+            <div class="clock-position clock-position--60">
+                <span class="clock-scratch"></span>
+            </div>
+        
+            <div class="clock-position">
+                <span  class="clock-arrow--hour"></span>
+            </div>
+            <div class="clock-position">
+                <span  class="clock-arrow--minute"></span>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h2>Калькулятор</h2>
+        <div id="calculator">
+            <input type="text" id="inputDigital" />
+            <div class="calc-buttons sqr" title="возвести в степень">sqr</div>
+            <div class="calc-buttons sqrt" title="получить корень">sqrt</div>
+            <div class="calc-buttons ln"  title="получить логарифм">ln</div>
+        </div>
+       
+    </section>
+
+    <section>
+        <h2>Функция, которая подсчитывает количество идущих подряд символов ‘xy’ в строке, без учета регистра.</h2>
+        <textarea id="textarea"> jfgvhdjk eху хух  yxyx</textarea>
+        <button id="getCoincidence">получить совпадения "xy"</button>
+        <div class="info"></div>
+    </section>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+
+
+    function getCountCoincidence(str, exp) {
+        var res = str.match(exp);
+        return res.length;
+    }
+
+
+
+
+
+    /*events*/
+    var elemGetCoincidence = document.getElementById("getCoincidence");
+    var elmInfo = document.getElementsByClassName("info")[0];
+    elemGetCoincidence.addEventListener("click", function(){
+        let str = document.getElementById("textarea").value;
+        let exp = /ху|xy/gi;
+        let count = getCountCoincidence(str, exp);
+
+        elmInfo.innerText = "Найдено "+count+" совпадений";
+    });
+    /*events*/    
+
+
+</script>
